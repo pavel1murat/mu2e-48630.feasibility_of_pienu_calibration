@@ -1,0 +1,191 @@
+% -*- mode:flyspell; mode:latex -*-
+\documentclass[12pt]{article}
+\addtolength{\oddsidemargin} {-0.885in}
+\addtolength{\textwidth}{1.75in}
+\addtolength{\evensidemargin}{-0.8in}
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{float}
+%% \usepackage{siunitx}
+
+%% \usepackage{gensymb}
+
+
+\usepackage{tikz}
+\usepackage{[caption}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{decorations.pathmorphing}
+% \usepackage[absolute,overlay]{textpos}
+% \usepackage{onimage}
+
+\usepackage{tabularx}
+\usepackage{times}
+\usepackage{graphics}
+
+% \usepackage{subfigure}
+% \usepackage{scalefnt}
+%
+% \renewcommand\thesubfigure{\arabic{subfigure}}
+
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{color}
+\usepackage[all]{hypcap}
+
+\usepackage[normalem]{ulem}  % for striking out
+% \usepackage{fancyhdr}
+% \pagestyle{fancy}
+% \fancyhead[C]{}
+% \fancyhead[L] {\it{Mu2e-doc-29670-v1.0} }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% use natbib - biblatex not available on Mu2e interactive nodes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[square,sort,comma,numbers]{natbib}
+
+% location of the .bib files: env var BIBINPUTS (~/library/bibliography)
+
+% \usepackage[backend=biber, style=numeric-comp, sorting=ynt] {biblatex}
+% \addbibresource{clfv.bib}
+
+% \addbibresource{stntuple.bib}
+% \addbibresource{mu2e_web.bib}
+% \addbibresource{radiative_pion_capture.bib}
+
+\graphicspath{{figures/}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% for portability, make sure all commands are included locally,
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ForestGreen}{RGB}{30,139,30}
+%\include{commands}
+\newcommand {\blue}      {\color{blue}}
+\newcommand {\green}     {\color{ForestGreen}}
+\newcommand {\red}       {\color{red}}
+\newcommand {\purple}    {\color{purple}}
+\newcommand {\violet}    {\color{violet}}
+
+\newcommand {\kmax}      {\mbox{$k_{\rm max}$}}
+\newcommand {\mumemconv}[1][A] {\mbox{$\mu^- \textrm{#1} \rightarrow e^- \textrm{#1}$}}
+% Define a relay to have 2 default arguments instead of limit of 1
+\newcommand {\mumepconv}[1][A] {%
+  \def\ArgI{{#1}}%store the first argument
+  \mumepconvRelay
+}
+\newcommand \mumepconvRelay[1][A]  {\mbox{$\mu^- \textrm{\ArgI} \rightarrow e^+ \textrm{#1}$}}
+\newcommand {\MuToEm}     {\mbox{$\mu^- \ra e^-$}}
+\newcommand {\MuToEp}     {\mbox{$\mu^- \ra e^+$}}
+\newcommand {\MuPToEp}    {\mbox{$\mu^+ \ra e^+$}}
+\newcommand {\ra}        {\rightarrow}
+\newcommand {\Rmue}       {\mbox{$R_{\mu e}$}}
+\newcommand {\tandip}    {\mbox{$\tan \lambda$}}
+
+\newcommand {\Pb}[1]     {\mbox{$\rm ^{#1}Pb$}}                 % isotopes of lead
+\newcommand {\Au}[1]     {\mbox{$\rm ^{#1}Au$}}                 % isotopes of gold
+\newcommand {\Ir}[1]     {\mbox{$\rm ^{#1}Ir$}}                 % isotopes of iridium
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% editing commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand {\del}[1]    {{\blue \sout{#1}}}
+\newcommand {\dlt}[1]    {{\violet \sout{#1}}} %alternate delete color
+\newcommand {\add}[1]    {{\red #1}}
+\newcommand {\alt}[1]    {{\green #1}} %alternate comment color
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{titlepage}
+  \begin{flushright}
+    \bf {MU2E/PHYSICS/37812} \\
+    version 1.01
+    \today
+ \end{flushright}
+
+  \vspace{1cm}
+
+  \begin{center}
+    {\Large \bf On the feasibility of using $\pi^+ \to e^+ \nu$ channel \\
+      for momentum calibration of the Mu2e tracker
+
+      \vspace{0.3in}
+      10. subtitle
+    }
+
+    \vspace{1cm}
+    P.Murat(FNAL), S.Tripathy(UC Davis)
+
+    % \footnote{\texttt{Fermilab; e-mail: murat@fnal.gov}}
+    \vspace{0.3cm}
+
+    \vspace{0.8cm}
+  \end{center}
+
+  \begin{abstract}
+
+    \vspace{0.2in}
+
+  \end{abstract}
+
+\end{titlepage}
+% \frontmatter
+% \chapter*{Abstract}
+%
+% \addcontentsline{toc}{chapter}{Abstract}
+%
+% \mainmatter
+%
+{\tableofcontents}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\chapter{Calibration}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \input{input_data}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\section {Revision History}
+
+\begin{itemize}
+\item
+\item
+  v1.01: inital version
+\end{itemize}
+
+\section {Introduction}
+
+Feasibility of using $\pi^+ \to e^+\nu$ for calibrating the momentum scale of the Mu2e tracker
+has been investigated by several groups -see \cite{UB_NOTES, PURDUE_NOTES} and references therein.
+
+Presently, the ultimate conclusion remains somewhat uncertain.
+Several issues , however, are understood:
+\begin{itemize}
+\item 
+  study of the $\pi^+ \to e^+\nu$ channel requires performing the measurement at early times.
+  That requires sigreducing the proton beam proton beam intensity to be significantly reduced. 
+  That allows not to worry too much about the pileup
+\item
+  to reduce the background from muon decays in flight, this calibration requires
+  special instrumentation, a beam degrader, to be installed in the DS.
+\end{itemize}
+
+\include{pienu_signal_simulation}
+\include{muon_dif}
+\include{other_bkg}
+\include{reconstruction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section {Summary}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\bibliographystyle{unsrtnat}
+\bibliography{clfv,mu2e_internal_notes,statistics}
+\end{document}
