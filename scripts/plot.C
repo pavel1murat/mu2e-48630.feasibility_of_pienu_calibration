@@ -28,19 +28,25 @@ stn_catalog*   catalog;           // has to be global
 #include "plot_figure_0001.C"
 
 #include "plot_figure_0011.C"
-
+                                        // 2mm Ti degrader 
 #include "plot_figure_0201.C"
-#include "plot_figure_0202.C"
+#include "plot_figure_0202.C"           //   T0
+#include "plot_figure_0203.C"           //   tdip
+#include "plot_figure_0204.C"           //   chi2d 
+#include "plot_figure_0205.C"           //   nactv 
+#include "plot_figure_0206.C"           //   momerr 
 
 #include "plot_figure_0211.C"
 
 #include "plot_figure_0231.C"
+                                        // 3 mm 
 #include "plot_figure_0331.C"
-
+                                        // 4 mm 
 #include "plot_figure_0431.C"
-
+                                        // 5 mm 
 #include "plot_figure_0501.C"
 #include "plot_figure_0502.C"
+#include "plot_figure_0503.C"           //   tdip
 
 #include "plot_figure_0531.C"
 
@@ -82,10 +88,15 @@ plot_data_t* plot(int Figure, int Print = 0) {
 // fig    1: 
 //-----------------------------------------------------------------------------
   if      (Figure ==   1) pdata = plot_figure_0001(Figure,Print);
+
   else if (Figure ==  11) pdata = plot_figure_0011(Figure,Print);
   
   else if (Figure == 201) pdata = plot_figure_0201(Figure,Print);
   else if (Figure == 202) pdata = plot_figure_0202(Figure,Print);
+  else if (Figure == 203) pdata = plot_figure_0203(Figure,Print);       // tdip   bpip2b0s51 vs bpip2b0s54
+  else if (Figure == 204) pdata = plot_figure_0204(Figure,Print);       // chi2d  bpip2b0s51 vs bpip2b0s54
+  else if (Figure == 205) pdata = plot_figure_0205(Figure,Print);       // nactv  bpip2b0s51 vs bpip2b0s54
+  else if (Figure == 206) pdata = plot_figure_0206(Figure,Print);       // momerr bpip2b0s51 vs bpip2b0s54
 
   else if (Figure == 211) pdata = plot_figure_0211(Figure,Print);
 
@@ -97,6 +108,7 @@ plot_data_t* plot(int Figure, int Print = 0) {
   
   else if (Figure == 501) pdata = plot_figure_0501(Figure,Print);
   else if (Figure == 502) pdata = plot_figure_0502(Figure,Print);
+  else if (Figure == 503) pdata = plot_figure_0503(Figure,Print);       // tdip   bpip5b0s51 vs bpip5b0s54
 
   else if (Figure == 531) pdata = plot_figure_0531(Figure,Print);
 
