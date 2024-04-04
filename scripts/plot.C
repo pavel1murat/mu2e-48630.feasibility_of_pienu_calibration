@@ -29,6 +29,7 @@ stn_catalog*   catalog;           // has to be global
 #include "plot_figure_0201.C"
 #include "plot_figure_0202.C"
 
+#include "plot_figure_0231.C"
 #include "plot_figure_0331.C"
 
 #include "plot_figure_0431.C"
@@ -80,6 +81,8 @@ plot_data_t* plot(int Figure, int Print = 0) {
   else if (Figure == 201) pdata = plot_figure_0201(Figure,Print);
   else if (Figure == 202) pdata = plot_figure_0202(Figure,Print);
 
+  else if (Figure == 231) pdata = plot_figure_0231(Figure,Print);
+
   else if (Figure == 331) pdata = plot_figure_0331(Figure,Print);
   
   else if (Figure == 431) pdata = plot_figure_0431(Figure,Print);
@@ -88,6 +91,6 @@ plot_data_t* plot(int Figure, int Print = 0) {
   else if (Figure == 502) pdata = plot_figure_0502(Figure,Print);
 
   else if (Figure == 531) pdata = plot_figure_0531(Figure,Print);
-  
+
   return pdata;
 }

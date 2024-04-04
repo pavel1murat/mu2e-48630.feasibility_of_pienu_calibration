@@ -1,0 +1,9 @@
+#+startup:fold
+
+
+* TODO <2024-04-03 Wed>
+
+- implement track ID with the default cuts
+
+- compare disstributions for positrons from pi+ --> e+ nu from the ST and degrader for different thicknesses
+  and no timing cut

@@ -40,7 +40,7 @@ plot_data_t* plot_figure_0502(int Figure, int Print) {
   p.hd[1].fMarkerSize  = 0.8;
   p.hd[1].fLumiSF      = (617324./100000.)*BR_pienu/NPOT_pienu;
     
-  p.hd[2]              = hist_data_t(catalog,"pipenu",bmup5b0s54,ana_job,"PipenuAna","trk_150/t0");
+  p.hd[2]              = hist_data_t(catalog,"pipenu",bmup5b0s54,ana_job,"PipenuAna","trk_100/t0");
   p.hd[2].fRebin       = 1;
   p.hd[2].fXAxisTitle  = "T0, ns";
   p.hd[2].fXMin        = -10.;

@@ -18,42 +18,33 @@ plot_data_t* plot_figure_0531(int Figure, int Print) {
 //------------------------------------------------------------------------------
   p.hd[0]              = hist_data_t(catalog,"pipenu",bpip5b0s51,ana_job,"PipenuAna","trk_153/p_2");
 
-  p.hd[0].fRebin       = 1;
+  p.hd[0].fRebin       = 5;
   p.hd[0].fXAxisTitle  = "T0, ns";
-  p.hd[0].fXMin        = -10.;
-  p.hd[0].fXMax        = 10.;
   p.hd[0].fLabel       = "ST";
-  p.hd[0].fYLogScale   = 0;
   p.hd[0].fMarkerColor = kRed+1;
   p.hd[0].fMarkerStyle = 20;
   p.hd[0].fLumiSF      = (17225./100000)*BR_pienu/NPOT_pienu;
 
   p.hd[1]              = hist_data_t(catalog,"pipenu",bpip5b0s54,ana_job,"PipenuAna","trk_153/p_2");
-  p.hd[1].fRebin       = 1;
-  p.hd[1].fXAxisTitle  = "T0, ns";
-  p.hd[1].fXMin        = -10.;
-  p.hd[1].fXMax        = 10.;
+  p.hd[1].fRebin       = 5;
   p.hd[1].fLabel       = "Degrader";
-  p.hd[1].fYLogScale   = 0;
   p.hd[1].fMarkerColor = kBlue;
   p.hd[1].fMarkerStyle = 21;
   p.hd[1].fMarkerSize  = 0.8;
   p.hd[1].fLumiSF      = (617324./100000.)*BR_pienu/NPOT_pienu;
-    
-  p.hd[2]              = hist_data_t(catalog,"pipenu",bmup5b0s54,ana_job,"PipenuAna","trk_153/p_2");
-  p.hd[2].fRebin       = 1;
-  p.hd[2].fXAxisTitle  = "T0, ns";
-  p.hd[2].fXMin        = -10.;
-  p.hd[2].fXMax        = 10.;
+//------------------------------------------------------------------------------
+// for DIF, no need to weight with the pion surv prob
+//-----------------------------------------------------------------------------
+  p.hd[2]              = hist_data_t(catalog,"pipenu",bmup5b0s54,ana_job,"PipenuAna","trk_103/p_2");
+  p.hd[2].fRebin       = 5;
   p.hd[2].fLabel       = "DIF";
-  p.hd[2].fYLogScale   = 0;
   p.hd[2].fMarkerColor = kGreen+3;
   p.hd[2].fLineColor   = kGreen+3;
   p.hd[2].fMarkerStyle = 22;
   p.hd[2].fMarkerSize  = 0.8;
   p.hd[2].fLumiSF      = 1./7.75e12;  // simulated statistics
     
-  p.fXMin              = 60.;
+  p.fXMin              = 55.;
   p.fXMax              = 80.;
   p.fYMin              = 1e-15;
   p.fYMax              = 1e-11;
