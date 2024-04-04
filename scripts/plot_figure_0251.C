@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------
 // PTRK
-// YIELDS: ST vs degrader for bpip2b0 - 
+// YIELDS: ST vs degrader for bpip2b0 - all tracks
 //-----------------------------------------------------------------------------
 plot_data_t* plot_figure_0251(int Figure, int Print) {
     
