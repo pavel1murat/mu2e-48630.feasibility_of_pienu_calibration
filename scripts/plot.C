@@ -26,8 +26,13 @@ stn_catalog*   catalog;           // has to be global
 #include "pipenu/ana/scripts/init_pipenu_datasets.C"
 
 #include "plot_figure_0001.C"
+
+#include "plot_figure_0011.C"
+
 #include "plot_figure_0201.C"
 #include "plot_figure_0202.C"
+
+#include "plot_figure_0211.C"
 
 #include "plot_figure_0231.C"
 #include "plot_figure_0331.C"
@@ -77,12 +82,15 @@ plot_data_t* plot(int Figure, int Print = 0) {
 // fig    1: 
 //-----------------------------------------------------------------------------
   if      (Figure ==   1) pdata = plot_figure_0001(Figure,Print);
+  else if (Figure ==  11) pdata = plot_figure_0011(Figure,Print);
   
   else if (Figure == 201) pdata = plot_figure_0201(Figure,Print);
   else if (Figure == 202) pdata = plot_figure_0202(Figure,Print);
 
-  else if (Figure == 231) pdata = plot_figure_0231(Figure,Print);
+  else if (Figure == 211) pdata = plot_figure_0211(Figure,Print);
 
+  else if (Figure == 231) pdata = plot_figure_0231(Figure,Print);
+  
   else if (Figure == 331) pdata = plot_figure_0331(Figure,Print);
   
   else if (Figure == 431) pdata = plot_figure_0431(Figure,Print);

@@ -1,7 +1,7 @@
 //-----------------------------------------------------------------------------
-// ST vs degrader for bpip2b0
+// ST vs degrader for bpip2b0 : weighted momentum for tracks passing the ID cuts
 //-----------------------------------------------------------------------------
-plot_data_t* plot_figure_0201(int Figure, int Print) {
+plot_data_t* plot_figure_0211(int Figure, int Print) {
     
   const char* bpip2b0s51  = "pipenu.bpip2b0s51r0100";
   const char* bpip2b0s54  = "pipenu.bpip2b0s54r0100";
@@ -15,7 +15,7 @@ plot_data_t* plot_figure_0201(int Figure, int Print) {
 // 2.5e8 : the number of POT generated to get the pion stops
 // 1.23e-4 : BR(pi --> e nu)
 //------------------------------------------------------------------------------
-  p.hd[0]              = hist_data_t(catalog,"pipenu",bpip2b0s51,ana_job,"PipenuAna","trk_150/p_2");
+  p.hd[0]              = hist_data_t(catalog,"pipenu",bpip2b0s51,ana_job,"PipenuAna","trk_151/p_2");
 
   p.hd[0].fRebin       = 2;
   p.hd[0].fXAxisTitle  = "T0, ns";
@@ -24,7 +24,7 @@ plot_data_t* plot_figure_0201(int Figure, int Print) {
   p.hd[0].fMarkerStyle = 20;
   p.hd[0].fLumiSF      = (84785./100000)*BR_pienu/NPOT_pienu;
 
-  p.hd[1]              = hist_data_t(catalog,"pipenu",bpip2b0s54,ana_job,"PipenuAna","trk_150/p_2");
+  p.hd[1]              = hist_data_t(catalog,"pipenu",bpip2b0s54,ana_job,"PipenuAna","trk_151/p_2");
   p.hd[1].fRebin       = 2;
   p.hd[1].fXAxisTitle  = "T0, ns";
   p.hd[1].fLabel       = "pion stops in the degrader";
