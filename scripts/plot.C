@@ -39,16 +39,22 @@ stn_catalog*   catalog;           // has to be global
 #include "plot_figure_0211.C"
 
 #include "plot_figure_0231.C"
+
+#include "plot_figure_0251.C"
                                         // 3 mm 
 #include "plot_figure_0331.C"
+
+#include "plot_figure_0351.C"
                                         // 4 mm 
 #include "plot_figure_0431.C"
+#include "plot_figure_0451.C"
                                         // 5 mm 
 #include "plot_figure_0501.C"
 #include "plot_figure_0502.C"
 #include "plot_figure_0503.C"           //   tdip
 
 #include "plot_figure_0531.C"
+#include "plot_figure_0551.C"
 
 // pipenu::channel*  bpip0b0(nullptr) ;
 // pipenu::channel*  bpip2b0(nullptr) ;
@@ -91,26 +97,32 @@ plot_data_t* plot(int Figure, int Print = 0) {
 
   else if (Figure ==  11) pdata = plot_figure_0011(Figure,Print);
   
-  else if (Figure == 201) pdata = plot_figure_0201(Figure,Print);
+  else if (Figure == 201) pdata = plot_figure_0201(Figure,Print);       // 
   else if (Figure == 202) pdata = plot_figure_0202(Figure,Print);
-  else if (Figure == 203) pdata = plot_figure_0203(Figure,Print);       // tdip   bpip2b0s51 vs bpip2b0s54
-  else if (Figure == 204) pdata = plot_figure_0204(Figure,Print);       // chi2d  bpip2b0s51 vs bpip2b0s54
-  else if (Figure == 205) pdata = plot_figure_0205(Figure,Print);       // nactv  bpip2b0s51 vs bpip2b0s54
-  else if (Figure == 206) pdata = plot_figure_0206(Figure,Print);       // momerr bpip2b0s51 vs bpip2b0s54
+  else if (Figure == 203) pdata = plot_figure_0203(Figure,Print);       // ID tdip   bpip2b0s51 vs bpip2b0s54 all tracks
+  else if (Figure == 204) pdata = plot_figure_0204(Figure,Print);       // ID chi2d  bpip2b0s51 vs bpip2b0s54
+  else if (Figure == 205) pdata = plot_figure_0205(Figure,Print);       // ID nactv  bpip2b0s51 vs bpip2b0s54
+  else if (Figure == 206) pdata = plot_figure_0206(Figure,Print);       // ID momerr bpip2b0s51 vs bpip2b0s54
 
-  else if (Figure == 211) pdata = plot_figure_0211(Figure,Print);
+  else if (Figure == 211) pdata = plot_figure_0211(Figure,Print);       // 
 
   else if (Figure == 231) pdata = plot_figure_0231(Figure,Print);
+
+  else if (Figure == 251) pdata = plot_figure_0251(Figure,Print);       // momentum, yields ST vs DEG
   
   else if (Figure == 331) pdata = plot_figure_0331(Figure,Print);
+
+  else if (Figure == 351) pdata = plot_figure_0351(Figure,Print);       // momentum, yields ST vs DEG
   
   else if (Figure == 431) pdata = plot_figure_0431(Figure,Print);
+  else if (Figure == 451) pdata = plot_figure_0451(Figure,Print);       // momentum, yields ST vs DEG
   
   else if (Figure == 501) pdata = plot_figure_0501(Figure,Print);
   else if (Figure == 502) pdata = plot_figure_0502(Figure,Print);
   else if (Figure == 503) pdata = plot_figure_0503(Figure,Print);       // tdip   bpip5b0s51 vs bpip5b0s54
 
   else if (Figure == 531) pdata = plot_figure_0531(Figure,Print);
+  else if (Figure == 551) pdata = plot_figure_0451(Figure,Print);       // momentum, yields ST vs DEG
 
   return pdata;
 }
