@@ -68,6 +68,9 @@ pipenu::Analysis* gPipenu;           // same
 #include "plot_figure_0531.C"
 #include "plot_figure_0551.C"
 #include "plot_figure_0561.C"
+
+#include "plot_figure_2002.C"
+#include "plot_figure_2402.C"
 //-----------------------------------------------------------------------------
 // real [machine-dependent] values of Mu2eNotesDir and Mu2eHistDir 
 // should be defined in .rootrc
@@ -143,6 +146,12 @@ plot_data_t* plot(int Figure, int Print = 0) {
   else if (Figure == 531) pdata = plot_figure_0531(Figure,Print);
   else if (Figure == 551) pdata = plot_figure_0551(Figure,Print);       // momentum, yields ST vs DEG
   else if (Figure == 561) pdata = plot_figure_0561(Figure,Print);       // momentum, yields ST vs DEG
+//------------------------------------------------------------------------------
+// MC pion stops pion BPIP*S21 datasets:
+//-----------------------------------------------------------------------------
+  if      (Figure ==2002) pdata = plot_figure_2002(Figure,Print);       // pi+ tstop, ST
+  if      (Figure ==2402) pdata = plot_figure_2402(Figure,Print);       // pi+ tstop, degrader
+
 
   return pdata;
 }
