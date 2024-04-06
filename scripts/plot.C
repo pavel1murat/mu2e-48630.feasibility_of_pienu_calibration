@@ -27,9 +27,15 @@ pipenu::Analysis* gPipenu;           // same
 
 #include "pipenu/ana/scripts/init_pipenu_datasets.C"
 
-#include "plot_figure_0001.C"
+#include "plot_figure_0001.C"           // all ST tracks, weighted momentum
+#include "plot_figure_0002.C"           // all ST tracks, weighted T0
+#include "plot_figure_0009.C"           // weighted foil number, ST datasets
 
-#include "plot_figure_0011.C"
+#include "plot_figure_0011.C"           // good ST tracks, weighted T0
+#include "plot_figure_0012.C"           // good ST tracks, weighted T0
+
+#include "plot_figure_0041.C"           // good degrader tracks, weighted momentum
+
                                         // 2mm Ti degrader 
 #include "plot_figure_0201.C"
 #include "plot_figure_0202.C"           //   T0
@@ -42,10 +48,12 @@ pipenu::Analysis* gPipenu;           // same
 
 #include "plot_figure_0231.C"
 
-#include "plot_figure_0251.C"
-                                        // events passing ID cuts
-#include "plot_figure_0261.C"
-                                        // "N-1 plots"
+#include "plot_figure_0251.C"           // STT vs DEG: all  tracks, mom
+                                        // -------------- events passing the ID cuts
+#include "plot_figure_0261.C"           // STT vs DEG: good tracks, mom
+#include "plot_figure_0262.C"           // STT vs DEG: good tracks, TO
+
+                                        // track ID, "N-1" plots
 #include "plot_figure_0273.C"           // N-1 tdip
 #include "plot_figure_0274.C"           // N-1 nactv
 #include "plot_figure_0275.C"           // N-1 chi2d
@@ -55,11 +63,16 @@ pipenu::Analysis* gPipenu;           // same
 #include "plot_figure_0331.C"
 
 #include "plot_figure_0351.C"
+                                        // -------- yields, tracks passing the ID cuts
 #include "plot_figure_0361.C"
+#include "plot_figure_0362.C"
                                         // 4 mm 
 #include "plot_figure_0431.C"
 #include "plot_figure_0451.C"
+
+                                        // -------- yields, tracks passing the ID cuts
 #include "plot_figure_0461.C"
+#include "plot_figure_0462.C"
                                         // 5 mm 
 #include "plot_figure_0501.C"
 #include "plot_figure_0502.C"
@@ -67,7 +80,10 @@ pipenu::Analysis* gPipenu;           // same
 
 #include "plot_figure_0531.C"
 #include "plot_figure_0551.C"
+
+                                        // -------- DEG_5mm yields, good tracks
 #include "plot_figure_0561.C"
+#include "plot_figure_0562.C"
                                         // pion stop distributions, bpip*b0s21 and bpip*b0s24
 #include "plot_figure_2002.C"
 #include "plot_figure_2402.C"          
@@ -111,45 +127,58 @@ plot_data_t* plot(int Figure, int Print = 0) {
 //-----------------------------------------------------------------------------
 // fig    1: 
 //-----------------------------------------------------------------------------
-  if      (Figure ==    1) pdata = plot_figure_0001(Figure,Print);
+  if      (Figure ==    1) pdata = plot_figure_0001(Figure,Print);  // all STT tracks, reconstructed momentum
+  if      (Figure ==    2) pdata = plot_figure_0002(Figure,Print);  // all STT tracks, reconstructed T0
+  if      (Figure ==    9) pdata = plot_figure_0009(Figure,Print);  // bpip?s21r0000 (STT) datasets: weighted foil number
 
-  else if (Figure ==   11) pdata = plot_figure_0011(Figure,Print);
+  else if (Figure ==   11) pdata = plot_figure_0011(Figure,Print);  // good STT tracks, reconstructed mom
+  else if (Figure ==   12) pdata = plot_figure_0012(Figure,Print);  // good STT tracks, reconstructed T0
   
-  else if (Figure ==  201) pdata = plot_figure_0201(Figure,Print);       // 
-  else if (Figure ==  202) pdata = plot_figure_0202(Figure,Print);
-  else if (Figure ==  203) pdata = plot_figure_0203(Figure,Print);       // ID tdip   bpip2b0s51 vs bpip2b0s54 all tracks
-  else if (Figure ==  204) pdata = plot_figure_0204(Figure,Print);       // ID chi2d  bpip2b0s51 vs bpip2b0s54
-  else if (Figure ==  205) pdata = plot_figure_0205(Figure,Print);       // ID nactv  bpip2b0s51 vs bpip2b0s54
-  else if (Figure ==  206) pdata = plot_figure_0206(Figure,Print);       // ID momerr bpip2b0s51 vs bpip2b0s54
+  else if (Figure ==   41) pdata = plot_figure_0041(Figure,Print);  // good DEG tracks, reconstructed mom
 
-  else if (Figure ==  211) pdata = plot_figure_0211(Figure,Print);       // 
+  else if (Figure ==  201) pdata = plot_figure_0201(Figure,Print);  // 
+  else if (Figure ==  202) pdata = plot_figure_0202(Figure,Print);
+  else if (Figure ==  203) pdata = plot_figure_0203(Figure,Print);  // ID tdip   bpip2b0s51 vs bpip2b0s54 all tracks
+  else if (Figure ==  204) pdata = plot_figure_0204(Figure,Print);  // ID chi2d  bpip2b0s51 vs bpip2b0s54
+  else if (Figure ==  205) pdata = plot_figure_0205(Figure,Print);  // ID nactv  bpip2b0s51 vs bpip2b0s54
+  else if (Figure ==  206) pdata = plot_figure_0206(Figure,Print);  // ID momerr bpip2b0s51 vs bpip2b0s54
+
+  else if (Figure ==  211) pdata = plot_figure_0211(Figure,Print);  // 
 
   else if (Figure ==  231) pdata = plot_figure_0231(Figure,Print);
 
-  else if (Figure ==  251) pdata = plot_figure_0251(Figure,Print);       // momentum, yields ST vs DEG
- else if (Figure ==  261) pdata = plot_figure_0261(Figure,Print);       // momentum, yields ST vs DEG
+  else if (Figure ==  251) pdata = plot_figure_0251(Figure,Print);  // STT vs DEG yield: all  tracks, momentum
+  
+  else if (Figure ==  261) pdata = plot_figure_0261(Figure,Print);  // STT vs DEG yield: good tracks, momentum, 
+  else if (Figure ==  262) pdata = plot_figure_0262(Figure,Print);  // STT vs DEG yield: good tracks, T0      , 
 
-  else if (Figure ==  273) pdata = plot_figure_0273(Figure,Print);       // Track ID, tdip
-  else if (Figure ==  274) pdata = plot_figure_0274(Figure,Print);       // Track ID, nactv
-  else if (Figure ==  275) pdata = plot_figure_0275(Figure,Print);       // Track ID, chi2d
-  else if (Figure ==  276) pdata = plot_figure_0276(Figure,Print);       // Track ID, momerr
+  else if (Figure ==  273) pdata = plot_figure_0273(Figure,Print);  // Track ID, tdip
+  else if (Figure ==  274) pdata = plot_figure_0274(Figure,Print);  // Track ID, nactv
+  else if (Figure ==  275) pdata = plot_figure_0275(Figure,Print);  // Track ID, chi2d
+  else if (Figure ==  276) pdata = plot_figure_0276(Figure,Print);  // Track ID, momerr
   
   else if (Figure ==  331) pdata = plot_figure_0331(Figure,Print);
 
   else if (Figure ==  351) pdata = plot_figure_0351(Figure,Print);       // momentum, yields ST vs DEG
+  
   else if (Figure ==  361) pdata = plot_figure_0361(Figure,Print);       // momentum, yields ST vs DEG
+  else if (Figure ==  362) pdata = plot_figure_0362(Figure,Print);       // T0      , yields ST vs DEG
   
   else if (Figure ==  431) pdata = plot_figure_0431(Figure,Print);
   else if (Figure ==  451) pdata = plot_figure_0451(Figure,Print);       // momentum, yields ST vs DEG
+
   else if (Figure ==  461) pdata = plot_figure_0461(Figure,Print);       // momentum, yields ST vs DEG
+  else if (Figure ==  462) pdata = plot_figure_0462(Figure,Print);       // T0      , yields ST vs DEG
   
   else if (Figure ==  501) pdata = plot_figure_0501(Figure,Print);
   else if (Figure ==  502) pdata = plot_figure_0502(Figure,Print);
   else if (Figure ==  503) pdata = plot_figure_0503(Figure,Print);       // tdip   bpip5b0s51 vs bpip5b0s54
 
   else if (Figure ==  531) pdata = plot_figure_0531(Figure,Print);
-  else if (Figure ==  551) pdata = plot_figure_0551(Figure,Print);       // momentum, yields ST vs DEG
-  else if (Figure ==  561) pdata = plot_figure_0561(Figure,Print);       // momentum, yields ST vs DEG
+  else if (Figure ==  551) pdata = plot_figure_0551(Figure,Print);       // momentum, yields ST vs DEG, all  tracks
+
+  else if (Figure ==  561) pdata = plot_figure_0561(Figure,Print);       // momentum, yields ST vs DEG, good tracks
+  else if (Figure ==  562) pdata = plot_figure_0562(Figure,Print);       // T0      , yields ST vs DEG, good tracks
 //------------------------------------------------------------------------------
 // MC pion stops pion BPIP*S21 datasets:
 //-----------------------------------------------------------------------------

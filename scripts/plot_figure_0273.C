@@ -8,7 +8,9 @@ plot_data_t* plot_figure_0273(int Figure, int Print) {
   const char* bpip2b0s54  = "pipenu.bpip2b0s54r0100";
   const char* bmup2b0s54  = "pipenu.bmup2b0s54r0100";
 
-  const char* ana_job = "murat_pipenu_ana.0000";
+  const char* ana_job     = "murat_pipenu_ana.0000";
+  const char* ana_module  = "PipenuAna";
+  const char* hist_name   = "tid_0/tandip_1";
 
   plot_data_t* pdata = new plot_data_t(3);
   plot_data_t& p     = *pdata;
@@ -17,7 +19,7 @@ plot_data_t* plot_figure_0273(int Figure, int Print) {
 // 2.5e8 : the number of POT generated to get the pion stops
 // 1.23e-4 : BR(pi --> e nu)
 //------------------------------------------------------------------------------
-  p.hd[0]              = hist_data_t(catalog,"pipenu",bpip2b0s51,ana_job,"PipenuAna","tid_0/tandip_1");
+  p.hd[0]              = hist_data_t(catalog,"pipenu",bpip2b0s51,ana_job,ana_module,hist_name);
 
   p.hd[0].fRebin       = 2;
   p.hd[0].fLabel       = "pion stops in the ST";
@@ -25,7 +27,7 @@ plot_data_t* plot_figure_0273(int Figure, int Print) {
   p.hd[0].fMarkerStyle = 20;
   //  p.hd[0].fLumiSF      = gPipenu->GetChannel("bpip2b0s51r0100")->NormSF();
 
-  p.hd[1]              = hist_data_t(catalog,"pipenu",bpip2b0s54,ana_job,"PipenuAna","tid_0/tandip_1");
+  p.hd[1]              = hist_data_t(catalog,"pipenu",bpip2b0s54,ana_job,ana_module,hist_name);
   p.hd[1].fRebin       = 2;
   p.hd[1].fLabel       = "pion stops in the degrader";
   p.hd[1].fMarkerColor = kBlue;
@@ -33,7 +35,7 @@ plot_data_t* plot_figure_0273(int Figure, int Print) {
   p.hd[1].fMarkerSize  = 0.8;
   p.hd[1].fScale       = 2;
     
-  p.hd[2]              = hist_data_t(catalog,"pipenu",bmup2b0s54,ana_job,"PipenuAna","tid_0/tandip_1");
+  p.hd[2]              = hist_data_t(catalog,"pipenu",bmup2b0s54,ana_job,ana_module,hist_name);
   p.hd[2].fRebin       = 2;
   p.hd[2].fLabel       = "DIF";
   p.hd[2].fMarkerColor = kGreen+2;
@@ -49,7 +51,7 @@ plot_data_t* plot_figure_0273(int Figure, int Print) {
   p.fCanvasName        = Form("Figure_%04i",Figure);
   p.fName              = Form("figure_%05i",Figure);
 
-  p.fXAxisTitle        = "P, MeV/c";
+  p.fXAxisTitle        = "#tan #lambda";
   p.fLabel             = "#pi^{+} #rightarrow e #nu , 2 mm Ti degrader, events with tracks passing ID cuts";
   p.fYLogScale         = 0;
 
@@ -64,11 +66,13 @@ plot_data_t* plot_figure_0273(int Figure, int Print) {
   p.fCanvas->Modified();
   p.fCanvas->Update();
 
-  TArrow* arr = new TArrow(0.6,500,0.6,100,0.015);
-  arr->Draw();
-
-  TArrow* arr1 = new TArrow(1.0,500,1.0,100,0.015);
+  TArrow* arr1 = new TArrow(0.6,500,0.6,100,0.015);
+  arr1->SetLineWidth(2);
   arr1->Draw();
+
+  TArrow* arr2 = new TArrow(1.0,500,1.0,100,0.015);
+  arr2->SetLineWidth(2);
+  arr2->Draw();
 
   printf(" plot.C p.fOutputFn = %s\n",p.fOutputFn.Data());
     

@@ -34,10 +34,10 @@ plot_data_t* plot_figure_0551(int Figure, int Print) {
   p.hd[1].fMarkerSize  = 0.8;
   p.hd[1].fLumiSF      = gPipenu->GetChannel("bpip5b0s54r0100")->NormSF();
     
-  // p.fXMin              = 55.;
-  // p.fXMax              = 80.;
+  p.fXMin              = 55.;
+  p.fXMax              = 80.;
   p.fYMin              = 0; // 1e-16;
-  p.fYMax              = 2e-10;
+  p.fYMax              = 4e-12;
   p.fCanvasName        = Form("Figure_%04i",Figure);
   p.fName              = Form("figure_%05i",Figure);
   p.fLabel             = "Degrader: 5 mm Ti";

@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------
-// distributions of the pion stop time (simp_216/
+// distributions of the pion stop time (simp_216/etime)
 // BPIP*B0S51 datasets - momentum distributions , normalized
 //-----------------------------------------------------------------------------
 plot_data_t* plot_figure_2002(int Figure, int Print) {
@@ -20,14 +20,14 @@ plot_data_t* plot_figure_2002(int Figure, int Print) {
 // 2.5e8 : the number of POT generated to get the pion stops
 // 1.23e-4 : BR(pi --> e nu)
 //------------------------------------------------------------------------------
-  p.hd[0]              = hist_data_t(catalog,"pipenu",bpip0b0s21,ana_job,ana_module,"simp_216/time");
+  p.hd[0]              = hist_data_t(catalog,"pipenu",bpip0b0s21,ana_job,ana_module,"simp_216/etime");
   p.hd[0].fRebin       = 1;
   p.hd[0].fLabel       = "no degrader";
   p.hd[0].fMarkerColor = kRed+1;
   p.hd[0].fMarkerStyle = 20;
   // p.hd[0].fLumiSF      = (312616./100000)*BR_pienu/NPOT_pienu;
 
-  p.hd[1]              = hist_data_t(catalog,"pipenu",bpip2b0s21,ana_job,ana_module,"simp_216/time");
+  p.hd[1]              = hist_data_t(catalog,"pipenu",bpip2b0s21,ana_job,ana_module,"simp_216/etime");
   p.hd[1].fRebin       = 1;
   p.hd[1].fLabel       = "2 mm Ti";
   p.hd[1].fLineColor   = kBlue+2;
@@ -36,7 +36,7 @@ plot_data_t* plot_figure_2002(int Figure, int Print) {
   p.hd[1].fMarkerSize  = 1.0;
   // p.hd[1].fLumiSF      = (84785./100000.)*BR_pienu/NPOT_pienu;
     
-  p.hd[2]              = hist_data_t(catalog,"pipenu",bpip3b0s21,ana_job,ana_module,"simp_216/time");
+  p.hd[2]              = hist_data_t(catalog,"pipenu",bpip3b0s21,ana_job,ana_module,"simp_216/etime");
   p.hd[2].fRebin       = 1;
   p.hd[2].fLabel       = "3 mm Ti";
   p.hd[2].fLineColor   = kGreen+3;
@@ -45,7 +45,7 @@ plot_data_t* plot_figure_2002(int Figure, int Print) {
   p.hd[2].fMarkerSize  = 1.2;
   //  p.hd[2].fLumiSF      = (50340./100000.)*BR_pienu/NPOT_pienu;
     
-  p.hd[3]              = hist_data_t(catalog,"pipenu",bpip4b0s21,ana_job,ana_module,"simp_216/time");
+  p.hd[3]              = hist_data_t(catalog,"pipenu",bpip4b0s21,ana_job,ana_module,"simp_216/etime");
   p.hd[3].fRebin       = 1;
   p.hd[3].fLabel       = "4 mm Ti";
   p.hd[3].fMarkerColor = kBlack;
@@ -53,7 +53,7 @@ plot_data_t* plot_figure_2002(int Figure, int Print) {
   p.hd[3].fMarkerSize  = 1.2;
   // p.hd[3].fLumiSF      = (31681./100000.)*BR_pienu/NPOT_pienu;
     
-  p.hd[4]              = hist_data_t(catalog,"pipenu",bpip5b0s21,ana_job,ana_module,"simp_216/time");
+  p.hd[4]              = hist_data_t(catalog,"pipenu",bpip5b0s21,ana_job,ana_module,"simp_216/etime");
   p.hd[4].fRebin       = 1;
   p.hd[4].fLabel       = "5 mm Ti";
   p.hd[4].fLineColor   = kRed+2;

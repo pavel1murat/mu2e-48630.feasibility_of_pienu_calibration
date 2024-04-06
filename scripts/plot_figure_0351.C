@@ -23,7 +23,7 @@ plot_data_t* plot_figure_0351(int Figure, int Print) {
   p.hd[0].fLabel       = "pion stops in the ST";
   p.hd[0].fMarkerColor = kRed+1;
   p.hd[0].fMarkerStyle = 20;
-  p.hd[0].fLumiSF      = (50340./100000)*BR_pienu/NPOT_pienu;
+  p.hd[0].fLumiSF      = gPipenu->GetChannel("bpip3b0s51r0100")->NormSF();
 
   p.hd[1]              = hist_data_t(catalog,"pipenu",bpip3b0s54,ana_job,"PipenuAna","trk_150/p_2");
   p.hd[1].fRebin       = 2;
@@ -32,7 +32,7 @@ plot_data_t* plot_figure_0351(int Figure, int Print) {
   p.hd[1].fMarkerColor = kBlue;
   p.hd[1].fMarkerStyle = 21;
   p.hd[1].fMarkerSize  = 0.8;
-  p.hd[1].fLumiSF      = (532767./100000.)*BR_pienu/NPOT_pienu;
+  p.hd[1].fLumiSF      = gPipenu->GetChannel("bpip3b0s54r0100")->NormSF();
     
   p.fXMin              = 55.;
   p.fXMax              = 80.;

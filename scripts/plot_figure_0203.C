@@ -7,7 +7,10 @@ plot_data_t* plot_figure_0203(int Figure, int Print) {
   const char* bpip2b0s51  = "pipenu.bpip2b0s51r0100";
   const char* bpip2b0s54  = "pipenu.bpip2b0s54r0100";
 
-  const char* ana_job = "murat_pipenu_ana.0000";
+  const char* book        = "pipenu";
+  const char* ana_job     = "murat_pipenu_ana.0000";
+  const char* ana_module  = "PipenuAna";
+  const char* hist_name   = "trk_100/tdip";
 
   plot_data_t* pdata = new plot_data_t(2);
   plot_data_t& p     = *pdata;
@@ -16,16 +19,15 @@ plot_data_t* plot_figure_0203(int Figure, int Print) {
 // 2.5e8 : the number of POT generated to get the pion stops
 // 1.23e-4 : BR(pi --> e nu)
 //------------------------------------------------------------------------------
-  p.hd[0]              = hist_data_t(catalog,"pipenu",bpip2b0s51,ana_job,"PipenuAna","trk_100/tdip");
+  p.hd[0]              = hist_data_t(catalog,book,bpip2b0s51,ana_job,ana_module,hist_name);
   p.hd[0].fRebin       = 1;
-  p.hd[0].fXAxisTitle  = "tan #lambda";
   p.hd[0].fLabel       = "ST";
   p.hd[0].fMarkerColor = kRed+1;
   p.hd[0].fMarkerStyle = 20;
   p.hd[0].fNewName     = "ST";
   //  p.hd[0].fLumiSF      = (312616./100000)*BR_pienu/NPOT_pienu;
 
-  p.hd[1]              = hist_data_t(catalog,"pipenu",bpip2b0s54,ana_job,"PipenuAna","trk_100/tdip");
+  p.hd[1]              = hist_data_t(catalog,book,bpip2b0s54,ana_job,ana_module,hist_name);
   p.hd[1].fRebin       = 1;
   p.hd[1].fLabel       = "degrader";
   p.hd[1].fMarkerColor = kBlue;

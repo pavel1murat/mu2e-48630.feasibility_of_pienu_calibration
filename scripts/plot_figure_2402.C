@@ -19,7 +19,7 @@ plot_data_t* plot_figure_2402(int Figure, int Print) {
 // 2.5e8 : the number of POT generated to get the pion stops
 // 1.23e-4 : BR(pi --> e nu)
 //------------------------------------------------------------------------------
-  p.hd[0]              = hist_data_t(catalog,"pipenu",bpip2b0s24,ana_job,ana_module,"simp_216/time");
+  p.hd[0]              = hist_data_t(catalog,"pipenu",bpip2b0s24,ana_job,ana_module,"simp_216/etime");
   p.hd[0].fRebin       = 1;
   p.hd[0].fLabel       = "2 mm Ti";
   p.hd[0].fLineColor   = kBlue+2;
@@ -28,7 +28,7 @@ plot_data_t* plot_figure_2402(int Figure, int Print) {
   p.hd[0].fMarkerSize  = 1.0;
   // p.hd[1].fLumiSF      = (84785./100000.)*BR_pienu/NPOT_pienu;
     
-  p.hd[1]              = hist_data_t(catalog,"pipenu",bpip3b0s24,ana_job,ana_module,"simp_216/time");
+  p.hd[1]              = hist_data_t(catalog,"pipenu",bpip3b0s24,ana_job,ana_module,"simp_216/etime");
   p.hd[1].fRebin       = 1;
   p.hd[1].fLabel       = "3 mm Ti";
   p.hd[1].fLineColor   = kGreen+3;
@@ -37,7 +37,7 @@ plot_data_t* plot_figure_2402(int Figure, int Print) {
   p.hd[1].fMarkerSize  = 1.2;
   //  p.hd[2].fLumiSF      = (50340./100000.)*BR_pienu/NPOT_pienu;
     
-  p.hd[2]              = hist_data_t(catalog,"pipenu",bpip4b0s24,ana_job,ana_module,"simp_216/time");
+  p.hd[2]              = hist_data_t(catalog,"pipenu",bpip4b0s24,ana_job,ana_module,"simp_216/etime");
   p.hd[2].fRebin       = 1;
   p.hd[2].fLabel       = "4 mm Ti";
   p.hd[2].fMarkerColor = kBlack;
@@ -45,7 +45,7 @@ plot_data_t* plot_figure_2402(int Figure, int Print) {
   p.hd[2].fMarkerSize  = 1.2;
   // p.hd[3].fLumiSF      = (31681./100000.)*BR_pienu/NPOT_pienu;
     
-  p.hd[3]              = hist_data_t(catalog,"pipenu",bpip5b0s24,ana_job,ana_module,"simp_216/time");
+  p.hd[3]              = hist_data_t(catalog,"pipenu",bpip5b0s24,ana_job,ana_module,"simp_216/etime");
   p.hd[3].fRebin       = 1;
   p.hd[3].fLabel       = "5 mm Ti";
   p.hd[3].fLineColor   = kRed+2;
