@@ -1,7 +1,7 @@
 //-----------------------------------------------------------------------------
-// 2mm DEG: momentum for STT, DEG and DIF
+// tight ID, 5mm DEG: trk_178/p_2 for STT, DEG and DIF
 //-----------------------------------------------------------------------------
-plot_data_t* plot_figure_0531(int Figure, int Print) {
+plot_data_t* plot_figure_0532(int Figure, int Print) {
     
   const char* bpip5b0s51  = "pipenu.bpip5b0s51r0100";
   const char* bpip5b0s54  = "pipenu.bpip5b0s54r0100";
@@ -10,7 +10,7 @@ plot_data_t* plot_figure_0531(int Figure, int Print) {
   const char* book        = "pipenu";
   const char* ana_job     = "murat_pipenu_ana.0000";
   const char* ana_module  = "PipenuAna";
-  const char* hist_name   = "trk_158/p_2";
+  const char* hist_name   = "trk_178/p_2";
   
   plot_data_t* pdata      = new plot_data_t(3);
   plot_data_t& p          = *pdata;
@@ -38,7 +38,7 @@ plot_data_t* plot_figure_0531(int Figure, int Print) {
 //-----------------------------------------------------------------------------
 // no need to weigh the DIF histogram with the pion survival prob
 //-----------------------------------------------------------------------------
-  p.hd[2]              = hist_data_t(catalog,book,bmup5b0s54,ana_job,ana_module,"trk_108/p_2");
+  p.hd[2]              = hist_data_t(catalog,book,bmup5b0s54,ana_job,ana_module,"trk_128/p_2");
   p.hd[2].fRebin       = 5;
   p.hd[2].fLabel       = "DIF";
   p.hd[2].fMarkerColor = kGreen+3;

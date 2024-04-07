@@ -26,7 +26,14 @@ close to x3.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Track selection cuts}
 
-Give a table of initial track selection cuts - close to ``Set C''...
+Based on the distributions in the track ID variables presented in Figure~\ref{fig:tid_variables_2mm},
+we adopt the track ID cuts shown in the Table~\ref{table:track_id_cuts}
+
+The cut values are very close to an old set of cuts known as "Set C" and used by previous
+analyses, expect similat efficiencies.
+
+Cuts on $\tan \lambda$ and the track $d0$ provide significant rejection of the DIF
+and $\pi \to e \nu$ decays in the degrader.
 
 \begin{figure}[H]
   % \centering
@@ -35,26 +42,24 @@ Give a table of initial track selection cuts - close to ``Set C''...
   \includegraphics[width=0.55\linewidth]{pdf/figure_00276}  % tid_0/momerr_1
   \includegraphics[width=0.55\linewidth]{pdf/figure_00273}  % tid_0/tandip_1
   \caption{
-    \label{fig:tid_variables}
-    Distributions of the track ID variables 
+    \label{fig:tid_variables_2mm}
+    Distributions of the track ID variables for the 2mm Ti degrader
   }
 \end{figure}
 
-Based on the distributions in the track ID variables presented in Figure~\ref{fig:tid_variables},
-we adopt the track ID cuts shown in the Table~\ref{table:track_id_cuts}
 \begin{table}[H]
   \centering
   \begin{tabularx} {0.5\textwidth}{|X|c|}  %
     \hline
     variable                &   cut                        \\
     \hline                         
-    N hits used by the fit &   $N_{active}>= 25$            \\
+    N hits used by the fit  &   $N_{active}>= 25$            \\
     \hline                         
-    chi2/DOF             &   $\chi2/DOF < 3$            \\
+    chi2/DOF                &   $\chi2/DOF < 3$            \\
     \hline                         
-    track dip angle     &   $0.6 < \tan \lambda < 1.0$ \\
+    track dip angle         &   $0.6 < \tan \lambda < 1.0$ \\
     \hline                         
-    track momentum error    &   $\sigma_P < 0.5$ MeV/c     \\
+    track momentum error    &   $\sigma_P < 0.25$ MeV/c     \\
     \hline
   \end{tabularx}
   \caption{
@@ -102,37 +107,17 @@ the contribution of positrons coming from $\pi^+ \to e^+ \nu$ decays in the degr
 Reconstructed momentum distributions for positrons from $\pi^+ \to e^+ \nu$ decays
 in the ST and degrader are shown in Figure~\ref{fig:stt_vs_deg_momentum_good_tracks}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% before the selections cuts - all tracks - don't need
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \begin{figure}[H]
 %   % \centering
-%   \includegraphics[width=0.55\linewidth]{pdf/figure_00041}
-%   \caption{
-%     \label{fig:degrader_good_track_mom}
-%   }
-% \end{figure}
-
-% \begin{figure}[H]
-%   % \centering
-%   \includegraphics[width=0.55\linewidth]{pdf/figure_00201}
-%   \includegraphics[width=0.55\linewidth]{pdf/figure_00202}
+%   \includegraphics[width=0.55\linewidth]{pdf/figure_00251}
+%   \includegraphics[width=0.55\linewidth]{pdf/figure_00351}
+%   \includegraphics[width=0.55\linewidth]{pdf/figure_00451}
+%   \includegraphics[width=0.55\linewidth]{pdf/figure_00551}
 %   \caption{
 %     % \label{fig:deg_vs_no_degrader_time}
-%   }
-% \end{figure}
-
-% \begin{figure}[H]
-%   % \centering
-%   \includegraphics[width=0.55\linewidth]{pdf/figure_00211}
-%   \caption{
-%     % \label{fig:deg_vs_no_degrader_time}
-%   }
-% \end{figure}
-
-% \begin{figure}[H]
-%   % \centering
-%   \includegraphics[width=0.55\linewidth]{pdf/figure_00503}
-%   \caption{
-%     % \label{fig:deg_vs_no_degrader_time}
-%     track ID variables, 5 mm Ti degrader, all reconstructed tracks
 %   }
 % \end{figure}
 
@@ -170,46 +155,6 @@ Therefore, at large T0 the contribution of the degrader stops increases.
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Signal selection efficiency}
-
-{\red
-  \begin{itemize}
-  \item 
-    put N-1 plots here, an efficiency table
-  \item
-    quote total selection efficiency for pienu decays in the ST
-  \end{itemize}
-}
-
-\begin{figure}[H]
-  % \centering
-  \includegraphics[width=0.55\linewidth]{pdf/figure_00273}
-  \includegraphics[width=0.55\linewidth]{pdf/figure_00274}
-  \includegraphics[width=0.55\linewidth]{pdf/figure_00275}
-  \includegraphics[width=0.55\linewidth]{pdf/figure_00276}
-  \caption{
-    % \label{fig:deg_vs_no_degrader_time}
-    distributions of ID variables after ``N-1'' cuts
-  }
-\end{figure}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection {Signal Yields for different degrader thicknesses}
-\begin{figure}[H]
-  % \centering
-  \includegraphics[width=0.55\linewidth]{pdf/figure_00251}
-  \includegraphics[width=0.55\linewidth]{pdf/figure_00351}
-  \includegraphics[width=0.55\linewidth]{pdf/figure_00451}
-  \includegraphics[width=0.55\linewidth]{pdf/figure_00551}
-  \caption{
-    % \label{fig:deg_vs_no_degrader_time}
-  }
-\end{figure}
-
-{\red need the same plots after the track selection cuts}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Initial selection - results}
 
 
@@ -217,6 +162,7 @@ Therefore, at large T0 the contribution of the degrader stops increases.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Removing muon decays in the tracker}
+{\red doesn't do much, may not need to dicsuss} 
 
 One of the most dangerous topologies comes from the muon decays in flight backwards in the tracker,
 so a positron is produced upstream with small pZ.
@@ -228,8 +174,19 @@ In this case the number of hits in the time cluster is expected to be significan
 than the number of hits reconstructed on the track.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Tight selection - results}
+\subsection{Standard selection - results}
 
+Without the degrader looks quite hopeless:
+
+\begin{figure}[H]
+  % \centering
+  \includegraphics[width=0.90\linewidth]{pdf/figure_00231}
+  \caption{
+    \label{fig:deg_3mm_mom}
+  }
+\end{figure}
+
+Distributions for different degrader thicknesses after T0>300 ns cut:
 
 \begin{figure}[H]
   % \centering
@@ -242,10 +199,16 @@ than the number of hits reconstructed on the track.
   }
 \end{figure}
 
+The plots do not indicate that increasing the degrader thickness from 2mm to 5mm 
+improves  the signal to background ratio (S/B) in any significant way - the available
+statistics is not sufficient for drawing a conclusion.
+
 For degrader thickness of 4mm, a visual scan of DIF events above 65 MeV/c surviving
 the tight selection cuts has been performed.
 
-All surviving events represent an irreducible background and can't be rejected.
+The surviving events are dominated by the correctly reconstructed events,
+the high-momentum tail of the positrons from $\mu^+$ decays-in flight,
+not by mis-reconstructed events.
 
 %%% Local Variables:
 %%% mode: latex
