@@ -1,20 +1,31 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Simulation of the $\pi+ \to e^+ \nu $ signal }
 
-{\red Briefly Describe the multistage simulation - standard Mu2e scheme
-  \begin{itemize}
-  \item
-    first: simulation of the pion beam, 500x500,000 POT each ;
-  \item
-    then - simulation of the $\pi^+ \to e^+ \nu$ decays in the detector ;
-  \item
-    the digitization and the reconstruction start moved down to 100 ns ;
-  \item
-    the constant, representing the time offset between the proton bunch arrival
-    to the stopping target and the DAQ data request, is set to zero.
-  \end{itemize}
-}
+The \piplusenu\ signal is simulated using the standard Mu2e multi-stage simulation scheme.
+\begin{itemize}
+\item
+  stage 1: simulation of the proton interactions in the PT and tracing the pions 
+  till the DS entrance. The pion decays are turned off, the TS3 collimator is rotated
+  by 180 degrees. Statistics: $2.5 \times 10^8$ POT.
+\item
+  stage 2: tracing the pions till they stop in the degrader or in the ST. A Ti degrader is placed
+  at the DS entrance. The degrader thickness is varied in the range 2-5 mm with a step of 1 mm.
+\item
+  stage 3: simulation of the $\pi^+ \to e^+ \nu$ decays in the detector 
+\item
+  stage 4: digitization. The digitization start moved down to 100 ns ;
+\item
+  stage 5: reconstruction and ntupling. The earliest time used by the reconstruction algorithms
+  is moved down to 100 ns ;
+\item
+  the constant, representing the time offset between the proton bunch arrival
+  to the stopping target and the DAQ data request, is set to zero.
+\end{itemize}
 
+Stage 1 is common for all datasets. Starting from stage 2, datasets corresponding
+to different degrader thicknesses required separate generation.
+
+\begin{table}[H]
 \begin{tabularx}{1.0\textwidth} {|X|c|c|c|c|c|}  %
 % \begin{tabular}{1.0\textwidth} {|l|l|}  %
   \hline
@@ -32,8 +43,12 @@
   bpip5b0             &     5              &   17225     &   617324     &  158.8    &   2070       \\
   \hline
 \end{tabularx}
+\end{table}
 
-Distributions of the pion stop time for different degrader thicknesses are shown in Figure~\ref{fig:pion_stop_time}.
+Distributions of the pion stop time for pion stopped in the ST and the degrader are shown
+in Figure~\ref{fig:pion_stop_time}. A probability for a pion produced at the PT to reach the
+the stopping target and stop there could 
+
 \begin{figure}[H]
   \begin{tikzpicture}
     \node[anchor=south west,inner sep=0] at (0,0.) {
@@ -48,16 +63,21 @@ Distributions of the pion stop time for different degrader thicknesses are shown
   \end{tikzpicture}
   \caption{
     \label{fig:pion_stop_time}
-    Distributions of pi stop time for pions stopping in the ST and degrader. The integrals are the sums of weights.
+    Distributions of pi stop time for pions stopping in the ST (left) and degrader (right).
+    The events are weighted with the pion survival probability.
+    The integrals are the sums of individual event weights.
   }
 \end{figure}
 
-It is interesting to note that as the degrader thickness increases, the probability for a pion to stop
-in the ST first increases, and after 4mm starts falling down. 
-For the pion stops in the degrader, the number continues to increase, and the increase is due
-to the stops of faster and faster pions, so additional events accumulate only at early times.
+It is interesting to note that as the degrader thickness increases, the probability for a positive pion
+to reach the stopping target and stop there first increases to reach $\sim 10^{-6}$, and after 3-4mm
+starts falling down.  The probability for a pion to stop in the degrader continues to increase,
+however the increase is due to the stops of faster and faster pions, so additional events accumulate
+only at early times, below 200 ns.
 
-The Z distribution of the $\pi^+$ stops is shown in Figure~\ref{fig:pion_stop_foil}.
+The Z distribution of the $\pi^+$ stops, plotted via its ST foil number  proxy, is shown
+in Figure~\ref{fig:pion_stop_foil}. The yield of stopped pions is maximize for the degrader
+thickness of about 2-3 mm Ti.
 
 \begin{figure}[H]
   \begin{tikzpicture}
