@@ -47,8 +47,8 @@ plot_data_t* plot_figure_0431(int Figure, int Print) {
   p.hd[2].fMarkerSize  = 0.8;
   p.hd[2].fLumiSF      = gPipenu->GetChannel("bmup4b0s54r0100")->NormSF();
     
-  p.fXMin              = 55.;
-  p.fXMax              = 80.;
+  p.fXMin              = 40.;
+  p.fXMax              = 90.;
   p.fYMin              = 1e-15;
   p.fYMax              = 1e-9;
   p.fCanvasName        = Form("Figure_%04i",Figure);

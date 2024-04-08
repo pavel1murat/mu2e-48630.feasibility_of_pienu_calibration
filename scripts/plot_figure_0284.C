@@ -1,8 +1,7 @@
 //-----------------------------------------------------------------------------
-// momerr
-// YIELDS: ST vs degrader for bpip2b0 - tracks with fIDWord[0] = 0
+// track ID: nactv for events passing all loose cuts
 //-----------------------------------------------------------------------------
-plot_data_t* plot_figure_0276(int Figure, int Print) {
+plot_data_t* plot_figure_0284(int Figure, int Print) {
     
   const char* bpip2b0s51  = "pipenu.bpip2b0s51r0100";        // STT
   const char* bpip2b0s54  = "pipenu.bpip2b0s54r0100";        // degrader
@@ -10,7 +9,7 @@ plot_data_t* plot_figure_0276(int Figure, int Print) {
 
   const char* ana_job     = "murat_pipenu_ana.0000";
   const char* ana_module  = "PipenuAna";
-  const char* hist_name   = "tid_0/momerr_1";
+  const char* hist_name   = "trk_105/nactv";
 
   plot_data_t* pdata = new plot_data_t(3);
   plot_data_t& p     = *pdata;
@@ -45,12 +44,12 @@ plot_data_t* plot_figure_0276(int Figure, int Print) {
     
   // p.fXMin              = 55.;
   // p.fXMax              = 80.;
-  // p.fYMin              = 0;
-  // p.fYMax              = 8e-12;
+  p.fYMin              = 0;
+  p.fYMax              = 300;
   p.fCanvasName        = Form("Figure_%04i",Figure);
   p.fName              = Form("figure_%05i",Figure);
 
-  p.fXAxisTitle        = "#sigma_{P}, MeV/c";
+  p.fXAxisTitle        = "N(active hits)";
   p.fLabel             = "#pi^{+} #rightarrow e #nu , 2 mm Ti degrader, events with tracks passing ID cuts";
   p.fYLogScale         = 0;
 
@@ -65,7 +64,7 @@ plot_data_t* plot_figure_0276(int Figure, int Print) {
   p.fCanvas->Modified();
   p.fCanvas->Update();
 
-  TArrow* arr = new TArrow(0.25,1000,0.25,150,0.015);
+  TArrow* arr = new TArrow(30,100,30,10,0.015);
   arr->SetLineWidth(2);
   arr->Draw();
 

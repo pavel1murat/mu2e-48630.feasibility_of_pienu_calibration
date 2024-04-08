@@ -51,6 +51,7 @@ pipenu::Analysis* gPipenu;           // same
 
 #include "plot_figure_0231.C"           // trk_158/p_2 2mm (loose ID)
 #include "plot_figure_0232.C"           // trk_178/p_2 2mm (tight ID)
+#include "plot_figure_0233.C"           // 2mm DIF trk mom loose ID vs tight ID)
 
 #include "plot_figure_0251.C"           // STT vs DEG: all  tracks, mom
                                         // -------------- events passing the ID cuts
@@ -62,10 +63,15 @@ pipenu::Analysis* gPipenu;           // same
 #include "plot_figure_0274.C"           // N-1 nactv
 #include "plot_figure_0275.C"           // N-1 chi2d
 #include "plot_figure_0276.C"           // N-1 momerr
+#include "plot_figure_0277.C"           // N-1 momerr
+
+#include "plot_figure_0284.C"           // N-1 momerr
+#include "plot_figure_0287.C"           // N-1 momerr
 
                                         // 3 mm 
 #include "plot_figure_0331.C"           // trk_158/p_2  loose ID
 #include "plot_figure_0332.C"           // trk_178/p_2  tight ID
+#include "plot_figure_0333.C"           // DIF: tight ID vsl loose ID
 
 #include "plot_figure_0351.C"
                                         // -------- yields, tracks passing the ID cuts
@@ -74,12 +80,17 @@ pipenu::Analysis* gPipenu;           // same
                                         // 4 mm 
 #include "plot_figure_0431.C"           // trk_158/p_2  loose ID
 #include "plot_figure_0432.C"           // trk_178/p_2  tight ID
+#include "plot_figure_0433.C"           // DIF: tight ID vsl loose ID
 
 #include "plot_figure_0451.C"
 
                                         // -------- yields, tracks passing the ID cuts
 #include "plot_figure_0461.C"
 #include "plot_figure_0462.C"
+
+#include "plot_figure_0484.C"           // track ID , track D0
+#include "plot_figure_0487.C"           // track ID , track D0
+
                                         // 5 mm 
 #include "plot_figure_0501.C"
 #include "plot_figure_0502.C"
@@ -87,6 +98,7 @@ pipenu::Analysis* gPipenu;           // same
 
 #include "plot_figure_0531.C"           // trk_158/p_2  tight ID
 #include "plot_figure_0532.C"           // trk_178/p_2  tight ID
+#include "plot_figure_0533.C"           // DIF: tight ID vsl loose ID
 
 #include "plot_figure_0551.C"
 
@@ -147,7 +159,9 @@ plot_data_t* plot(int Figure, int Print = 0) {
   else if (Figure ==   32) pdata = plot_figure_0032(Figure,Print);  // trk_178/p_2: tight ID, NO_DEG, money plot
 
   else if (Figure ==   41) pdata = plot_figure_0041(Figure,Print);  // good DEG tracks, reconstructed mom
-
+//-----------------------------------------------------------------------------
+// 3mm Ti
+//-----------------------------------------------------------------------------
   else if (Figure ==  201) pdata = plot_figure_0201(Figure,Print);  // 
   else if (Figure ==  202) pdata = plot_figure_0202(Figure,Print);
   else if (Figure ==  203) pdata = plot_figure_0203(Figure,Print);  // ID tdip   bpip2b0s51 vs bpip2b0s54 all tracks
@@ -159,6 +173,7 @@ plot_data_t* plot(int Figure, int Print = 0) {
 
   else if (Figure ==  231) pdata = plot_figure_0231(Figure,Print);  // trk_158/p_2
   else if (Figure ==  232) pdata = plot_figure_0232(Figure,Print);  // trk_178/p_2: tight ID, 4mm, money plot
+  else if (Figure ==  233) pdata = plot_figure_0233(Figure,Print);  // DIF, tight ID vs loose ID
 
   else if (Figure ==  251) pdata = plot_figure_0251(Figure,Print);  // STT vs DEG yield: all  tracks, momentum
   
@@ -169,29 +184,41 @@ plot_data_t* plot(int Figure, int Print = 0) {
   else if (Figure ==  274) pdata = plot_figure_0274(Figure,Print);  // Track ID, nactv
   else if (Figure ==  275) pdata = plot_figure_0275(Figure,Print);  // Track ID, chi2d
   else if (Figure ==  276) pdata = plot_figure_0276(Figure,Print);  // Track ID, momerr
-  
-  else if (Figure ==  331) pdata = plot_figure_0331(Figure,Print);
-  else if (Figure ==  332) pdata = plot_figure_0332(Figure,Print);       // tight ID, 4mm, money plot
+  else if (Figure ==  277) pdata = plot_figure_0277(Figure,Print);  // Track ID, d0
 
-  else if (Figure ==  351) pdata = plot_figure_0351(Figure,Print);       // momentum, yields ST vs DEG
+  else if (Figure ==  284) pdata = plot_figure_0284(Figure,Print);  // Track ID, trk_125/nactv 
+  else if (Figure ==  287) pdata = plot_figure_0287(Figure,Print);  // track D0, trk_125/d0
+//-----------------------------------------------------------------------------
+// 3mm Ti
+//-----------------------------------------------------------------------------
+  else if (Figure ==  331) pdata = plot_figure_0331(Figure,Print);
+  else if (Figure ==  332) pdata = plot_figure_0332(Figure,Print);  // tight ID, 4mm, money plot
+  else if (Figure ==  333) pdata = plot_figure_0333(Figure,Print);  // DIF, tight ID vs loose ID
+
+  else if (Figure ==  351) pdata = plot_figure_0351(Figure,Print);  // momentum, yields ST vs DEG
   
-  else if (Figure ==  361) pdata = plot_figure_0361(Figure,Print);       // momentum, yields ST vs DEG
-  else if (Figure ==  362) pdata = plot_figure_0362(Figure,Print);       // T0      , yields ST vs DEG
+  else if (Figure ==  361) pdata = plot_figure_0361(Figure,Print);  // momentum, yields ST vs DEG
+  else if (Figure ==  362) pdata = plot_figure_0362(Figure,Print);  // T0      , yields ST vs DEG
   
   else if (Figure ==  431) pdata = plot_figure_0431(Figure,Print);
-  else if (Figure ==  432) pdata = plot_figure_0432(Figure,Print);       // tight ID, 4mm, money plot
+  else if (Figure ==  432) pdata = plot_figure_0432(Figure,Print);  // tight ID, 4mm, money plot
+  else if (Figure ==  433) pdata = plot_figure_0433(Figure,Print);  // DIF, tight ID vs loose ID
 
   else if (Figure ==  451) pdata = plot_figure_0451(Figure,Print);       // momentum, yields ST vs DEG
 
   else if (Figure ==  461) pdata = plot_figure_0461(Figure,Print);       // momentum, yields ST vs DEG
   else if (Figure ==  462) pdata = plot_figure_0462(Figure,Print);       // T0      , yields ST vs DEG
+
+  else if (Figure ==  484) pdata = plot_figure_0484(Figure,Print);       // track ID, Nactive
+  else if (Figure ==  487) pdata = plot_figure_0487(Figure,Print);       // track ID, d0
   
   else if (Figure ==  501) pdata = plot_figure_0501(Figure,Print);
   else if (Figure ==  502) pdata = plot_figure_0502(Figure,Print);
   else if (Figure ==  503) pdata = plot_figure_0503(Figure,Print);       // tdip   bpip5b0s51 vs bpip5b0s54
 
   else if (Figure ==  531) pdata = plot_figure_0531(Figure,Print);
-  else if (Figure ==  532) pdata = plot_figure_0532(Figure,Print);       // money plot, tight ID
+  else if (Figure ==  532) pdata = plot_figure_0532(Figure,Print);  // money plot, tight ID
+  else if (Figure ==  533) pdata = plot_figure_0533(Figure,Print);  // DIF, tight ID vs loose ID
   
   else if (Figure ==  551) pdata = plot_figure_0551(Figure,Print);       // momentum, yields ST vs DEG, all  tracks
 

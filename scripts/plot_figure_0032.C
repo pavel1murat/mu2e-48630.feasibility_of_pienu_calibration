@@ -39,8 +39,8 @@ plot_data_t* plot_figure_0032(int Figure, int Print) {
   p.hd[1].fMarkerSize  = 0.8;
   p.hd[1].fLumiSF      = gPipenu->GetChannel("bmup0b0s54r0100")->NormSF();
     
-  p.fXMin              = 55.;
-  p.fXMax              = 80.;
+  p.fXMin              = 40.;
+  p.fXMax              = 90.;
   p.fYMin              = 1e-15;
   p.fYMax              = 1e-9;
   p.fCanvasName        = Form("Figure_%04i",Figure);
@@ -50,7 +50,7 @@ plot_data_t* plot_figure_0032(int Figure, int Print) {
 
   p.fStatBoxYMax       = 0.90;
   p.fStatBoxYMin       = 0.75;
-  p.fLegendXMin        = 0.50; p.fLegendXMax  = 0.70; p.fLegendYMin  = 0.70; p.fLegendYMax  = 0.80; 
+  p.fLegendXMin        = 0.50; p.fLegendXMax  = 0.70; p.fLegendYMin  = 0.75; p.fLegendYMax  = 0.85; 
     
   plot_hist_1d(&p,-1);
 
