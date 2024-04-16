@@ -23,7 +23,8 @@ plot_data_t* plot_figure_3401(int Figure, int Print) {
   stn_dataset_t* ds1   = catalog->FindBook("pipenu")->FindDataset(bmup0b0s24);
   TH2F* h21            = gh2(ds1->FindHistFile("",ana_job)->GetName(),ana_module,"simp_204/xe_vs_ze");
   TH1D* hpx1           = h21->ProjectionX("hpx1");
-
+  hpx1->Scale(10/1.6);
+  
   p.hd[0]              = hist_data_t(hpx1,ana_job,ana_module);
   p.hd[0].fRebin       = 1;
   p.hd[0].fLabel       = "forced decay within T_{0} < 150 ns";
@@ -48,7 +49,7 @@ plot_data_t* plot_figure_3401(int Figure, int Print) {
   p.fXMin              = 0.;
   p.fXMax              = 20000.;
   p.fYMin              = 10;
-  p.fYMax              = 1e6;
+  p.fYMax              = 1e7;
   p.fXAxisTitle        = "Z, mm";
   p.fCanvasName        = Form("Figure_%04i",Figure);
   p.fName              = Form("figure_%05i",Figure);

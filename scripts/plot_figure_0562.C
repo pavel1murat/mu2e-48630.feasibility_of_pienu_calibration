@@ -42,7 +42,7 @@ plot_data_t* plot_figure_0562(int Figure, int Print) {
   p.fName              = Form("figure_%05i",Figure);
 
   p.fXAxisTitle        = "track T0, ns";
-  p.fLabel             = "#pi^{+} #rightarrow e{+} #nu , 2 mm Ti degrader, events with tracks passing ID cuts";
+  p.fLabel             = "#pi^{+} #rightarrow e{+} #nu , 5 mm Ti degrader, events with tracks passing ID cuts";
   p.fYLogScale         = 1;
 
   p.fStatBoxYMax       = 0.90;

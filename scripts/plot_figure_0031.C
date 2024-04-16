@@ -41,8 +41,8 @@ plot_data_t* plot_figure_0031(int Figure, int Print) {
     
   p.fXMin              = 40.;
   p.fXMax              = 90.;
-  p.fYMin              = 1e-15;
-  p.fYMax              = 1e-9;
+  p.fYMin              = 1e-14;
+  p.fYMax              = 1e-8;
   p.fCanvasName        = Form("Figure_%04i",Figure);
   p.fName              = Form("figure_%05i",Figure);
   p.fLabel             = "no degrader";

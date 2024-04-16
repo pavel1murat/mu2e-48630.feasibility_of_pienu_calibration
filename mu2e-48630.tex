@@ -127,18 +127,28 @@
 
   \begin{abstract}
     \vspace{0.2in}
-    A possibility of using the \piplusenu\ decays of positive pions stopped
-    in the stopping target (ST) for the Mu2e momentum scale calibration has been long
-    discussed within the collaboration. The calibration relies on reconstruction 
-    of the \piplusenu\ peak and its success critically depends on  suppression of
-    the $\mu^+ \to e^+ \nu_e \bar{\nu_{\mu}} $ decays in flight (DIF). 
+    A possibility of using \piplusenu\ decays of positive pions stopped
+    in the stopping target (ST) for the Mu2e momentum scale calibration
+    has been long discussed within the collaboration.
 
-    The analysis presented in this note is based on the simulated DIF statistics
-    of $\sim 8 \times 10^{12}$ protons on target (POT). It establishes the event selection
-    procedure which drastically reduces the DIF background and indicates
-    that a signal to background (S/B) ratio sufficient for the \piplusenu\ peak
-    reconstruction can be achieved. However, drawing a conclusion requires increasing
-    the simulated DIF statistics by another order of magnitude, to the level above $10^{14}$ POT.
+    The calibration relies on the reconstruction of the \piplusenu\ peak,
+    and its success critically depends on suppression of the $\mu^+ \to e^+ \nu_e \bar{\nu_{\mu}}$
+    decays in flight (DIF).
+
+    Together with the measurement of the edge of the Michel spectrum at B = 0.5 T,
+    reconstruction of the 70 MeV/c positron peak from \piplusenu\ at B = 0.7 T
+    would allow to calibrate the Mu2e momentum scale at B = 1.0 T.
+    
+    The analysis presented in this note introduces the event selection
+    procedure which significantly reduces the DIF background and indicates 
+    that a signal to background (S/B) ratio, sufficient for the successful
+    \piplusenu\ peak reconstruction, can be achieved.
+
+    The analysis is based on the simulated DIF statistics equivalent to
+    $\sim 8 \times 10^{12}$ protons on target (POT).
+    However, drawing a conclusion about the feasibility of reconstructing 
+    the \piplusenu\ channel requires increasing the simulated DIF statistics
+    by another order of magnitude, to the level above $10^{14}$ POT.
   \end{abstract}
 
 \end{titlepage}
@@ -195,25 +205,42 @@ are however understood:
   special instrumentation, a beam degrader, to be installed in the DS.
 \end{itemize}
 
+\include{momentum_scale}
+
 \include{signal_simulation}
 
 \include{muon_dif}
 
-\include{other_bkg}
+% \include{other_bkg}
 
 \include{reconstruction}
+
+\include{comparisons}
+
+% \include{comparison_to_bu}
+% \include{comparison_to_purdue}
 
 \include{tighter_selections}
 
 \include{calibration_time}
 
-\include{comparison_to_bu}
-
-\include{comparison_to_purdue}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section {Summary}
 
+We discussed a technique of using decays of positive pions stopped in the ST,
+\piplusenu\ at B=0.7 T, together with the measurement of the $\mu^+ \to e^+ \nu \nu$
+decays at B = 0.5 T, for an in-situ calibration of the Mu2e momentum scale at B=1.0 T.
+
+Assuming that the measurement of the Michel spectrum can be performed,
+the main issue becomes the reconstruction of the \piplusenu\ peak.
+The largest background to that comes from the muon DIF. 
+
+The note introduces the event selection procedure which significantly
+suppresses the DIF contribution and improves the S/B ratio. 
+%
+The situation starts looking rather optimistic, however the muon DIF statistics
+used in this study is not sufficient for drawing a conclusion, and it needs
+to be increased by at least an order of magnitude.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -222,5 +249,6 @@ are however understood:
 \bibliography{clfv,mu2e_internal_notes,mu2e_piplusenu_notes}
 
 \include{appendix_a}
+\include{appendix_b}
 
 \end{document}

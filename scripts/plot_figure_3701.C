@@ -37,6 +37,13 @@ plot_data_t* plot_figure_3701(int Figure, int Print) {
 //-----------------------------------------------------------------------------
   h1->Divide(hpx_024,hpx_025,10./1.6);
   
+  for (int i=1; i<=h1->GetNbinsX(); i++) {
+    double n1 = hpx_024->GetBinContent(i);
+    double n2 = hpx_025->GetBinContent(i);
+    double err = (n1*10./1.6)/(n2+1.e-12)*sqrt(1/(n1+1.e-12) +1./(n2+1.e-12));
+    h1->SetBinError(i,err);
+  }
+
   p.hd[0]              = hist_data_t(h1,ana_job,ana_module);
   p.hd[0].fRebin       = 1;
   p.hd[0].fLabel       = "no degrader";
@@ -56,6 +63,13 @@ plot_data_t* plot_figure_3701(int Figure, int Print) {
 
   TH1D* h2             = (TH1D*) hpx_524->Clone("h2");
   h2->Divide(hpx_524,hpx_525,10./1.6);
+
+  for (int i=1; i<=h2->GetNbinsX(); i++) {
+    double n1 = hpx_524->GetBinContent(i);
+    double n2 = hpx_525->GetBinContent(i);
+    double err = (n1*10./1.6)/(n2+1.e-12)*sqrt(1/(n1+1.e-12) +1./(n2+1.e-12));
+    h2->SetBinError(i,err);
+  }
 
   p.hd[1]              = hist_data_t(h2,ana_job,ana_module);
   p.hd[1].fRebin       = 1;

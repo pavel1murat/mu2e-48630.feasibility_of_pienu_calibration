@@ -63,7 +63,7 @@ pipenu::Analysis* gPipenu;           // same
 #include "plot_figure_0274.C"           // N-1 nactv
 #include "plot_figure_0275.C"           // N-1 chi2d
 #include "plot_figure_0276.C"           // N-1 momerr
-#include "plot_figure_0277.C"           // N-1 momerr
+#include "plot_figure_0277.C"           // N-1 d0
 
 #include "plot_figure_0284.C"           // N-1 momerr
 #include "plot_figure_0287.C"           // N-1 momerr
@@ -91,7 +91,7 @@ pipenu::Analysis* gPipenu;           // same
 #include "plot_figure_0484.C"           // track ID , track D0
 #include "plot_figure_0487.C"           // track ID , track D0
 
-                                        // 5 mm 
+                                        // ---------------------- 5 mm 
 #include "plot_figure_0501.C"
 #include "plot_figure_0502.C"
 #include "plot_figure_0503.C"           //   tdip
@@ -102,7 +102,7 @@ pipenu::Analysis* gPipenu;           // same
 
 #include "plot_figure_0551.C"
 
-                                        // -------- DEG_5mm yields, good tracks
+                                        // yields, good tracks
 #include "plot_figure_0561.C"
 #include "plot_figure_0562.C"
                                         // pion stop distributions, bpip*b0s21 and bpip*b0s24
@@ -110,7 +110,11 @@ pipenu::Analysis* gPipenu;           // same
 #include "plot_figure_2402.C"          
                                         // muon decay Z distributions, bmup*b0s24 and bmup*b0s25
 #include "plot_figure_3401.C"           // bmu0pb0
+#include "plot_figure_3412.C"           // bmu0pb0s24 vs s25
+#include "plot_figure_3422.C"           // bmu0pb0s24 vs s25  p(e+) > 55 MeV/c
+#include "plot_figure_3432.C"           // bmu0pb0s24 vs s25  p(e+) > 60 MeV/c
 #include "plot_figure_3451.C"           // bmu5pb0
+#include "plot_figure_3501.C"           // bmup9b0 plots with different decay constraints
 #include "plot_figure_3701.C"           // bmu5pb0
 //-----------------------------------------------------------------------------
 // real [machine-dependent] values of Mu2eNotesDir and Mu2eHistDir 
@@ -233,7 +237,11 @@ plot_data_t* plot(int Figure, int Print = 0) {
 // muon decay reweighting MC 
 //-----------------------------------------------------------------------------
   if      (Figure == 3401) pdata = plot_figure_3401(Figure,Print);       // bmup0b0 mu+ decay Z
-  if      (Figure == 3451) pdata = plot_figure_3451(Figure,Print);       // bmup0b5 mu+ decay Z
+  if      (Figure == 3412) pdata = plot_figure_3412(Figure,Print);       // bmup0b0s24 vs s25 mu+ decay time
+  if      (Figure == 3422) pdata = plot_figure_3422(Figure,Print);       // bmup0b0s24 vs s25 mu+ decay time p> 55
+  if      (Figure == 3432) pdata = plot_figure_3432(Figure,Print);       // bmup0b0s24 vs s25 mu+ decay time p > 60
+  if      (Figure == 3451) pdata = plot_figure_3451(Figure,Print);       // bmup5b0 mu+ decay Z
+  if      (Figure == 3501) pdata = plot_figure_3501(Figure,Print);       // bmup9b9s2? mu+ decay Z
   if      (Figure == 3701) pdata = plot_figure_3701(Figure,Print);       // ratios
 
 

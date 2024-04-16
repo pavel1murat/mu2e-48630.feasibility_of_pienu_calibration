@@ -1,11 +1,11 @@
 //-----------------------------------------------------------------------------
-// distributions of the muon decay Z : 
+// distributions of the muon decay time
 // BMUP*B0S24 and s25 datasets
 // this is bmup5b0
 //-----------------------------------------------------------------------------
 #include "Stntuple/val/stn_dataset.hh"
 
-plot_data_t* plot_figure_3451(int Figure, int Print) {
+plot_data_t* plot_figure_3432(int Figure, int Print) {
     
   const char* bmup5b0s24  = "pipenu.bmup5b0s24r0000";
   const char* bmup5b0s25  = "pipenu.bmup5b0s25r0000";
@@ -20,16 +20,7 @@ plot_data_t* plot_figure_3451(int Figure, int Print) {
 // 2.5e8 : the number of POT generated to get the pion stops
 // 1.23e-4 : BR(pi --> e nu)
 //------------------------------------------------------------------------------
-  stn_dataset_t* ds1   = catalog->FindBook("pipenu")->FindDataset(bmup5b0s24);
-  TH2F* h21            = gh2(ds1->FindHistFile("",ana_job)->GetName(),ana_module,"simp_204/xe_vs_ze");
-  TH1D* hpx1           = h21->ProjectionX("hpx1");
-//-----------------------------------------------------------------------------
-// compared to bmup5b0s25, used 10 times less statistics,
-// and resampling of 1600000 instead of 1000000
-//-----------------------------------------------------------------------------
-  hpx1->Scale(10./1.6);
-  
-  p.hd[0]              = hist_data_t(hpx1,ana_job,ana_module);
+  p.hd[0]              = hist_data_t(catalog,"pipenu",bmup5b0s24,ana_job,"murat_SpmcAna","simp_232/stime");
   p.hd[0].fRebin       = 1;
   p.hd[0].fLabel       = "forced decay within T_{0} < 150 ns";
   p.hd[0].fLineColor   = kBlue+2;
@@ -38,26 +29,24 @@ plot_data_t* plot_figure_3451(int Figure, int Print) {
   p.hd[0].fMarkerSize  = 1.0;
   // p.hd[1].fLumiSF      = (84785./100000.)*BR_pienu/NPOT_pienu;
     
-  stn_dataset_t* ds2   = catalog->FindBook("pipenu")->FindDataset(bmup5b0s25);
-  TH2F* h22            = gh2(ds2->FindHistFile("",ana_job)->GetName(),ana_module,"simp_204/xe_vs_ze");
-  TH1D* hpx2           = h22->ProjectionX("hpx2");
-  p.hd[1]              = hist_data_t(hpx2,ana_job,ana_module);
+  p.hd[1]              = hist_data_t(catalog,"pipenu",bmup5b0s25,ana_job,"murat_SpmcAna","simp_232/stime");
   p.hd[1].fRebin       = 1;
   p.hd[1].fLabel       = "default simulation";
   p.hd[1].fLineColor   = kGreen+3;
   p.hd[1].fMarkerColor = kGreen+3;
   p.hd[1].fMarkerStyle = 22;
   p.hd[1].fMarkerSize  = 1.2;
+  p.hd[1].fScale       = 2;  // normalize to the integral
   //  p.hd[2].fLumiSF      = (50340./100000.)*BR_pienu/NPOT_pienu;
      
   p.fXMin              = 0.;
-  p.fXMax              = 20000.;
-  p.fYMin              = 10;
-  p.fYMax              = 1e6;
-  p.fXAxisTitle        = "Z, mm";
+  p.fXMax              = 2000.;
+  // p.fYMin              = 10;
+  // p.fYMax              = 1e7;
+  p.fXAxisTitle        = "T, ns";
   p.fCanvasName        = Form("Figure_%04i",Figure);
   p.fName              = Form("figure_%05i",Figure);
-  p.fLabel             = "#mu^{+} decay vertex Z; 5 mm Ti degrader";
+  p.fLabel             = "#mu^{+} decay time; 5 mm Ti degrader; p(e^{+} > 60 MeV/c";
   p.fYLogScale         = 1;
 
   p.fStatBoxYMax       = 0.90;

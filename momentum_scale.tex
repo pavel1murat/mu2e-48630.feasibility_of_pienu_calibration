@@ -1,0 +1,66 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Momentum scale calibration at B=1 T with  $\mu^+ \to e^+ \nu \nu$  and \piplusenu }
+
+The momentum scale calibration discussed in this section relies on measurements
+of the edge of the positron momentum spectrum from $\mu^+ \to e^+ \nu \nu$ at B=0.5 T
+and the measurement of the \piplusenu\ peak at B = 0.7 T.
+
+Each of the two measurements allows to determine the momentum scale at the
+respective value of the magnetic field. Combining them allows to extrapolate
+the momentum scale to the nominal field, B = 1.0 T.
+The idea is illustrated by Figure~\ref{figure:momentum_scale}
+
+Momentum scale calibration scheme assumes that the magnetic field is set based
+on reading an NMR probe, and the scale correction can be effectively encapsulated
+by re-scaling the value of the nominal magnetic field. 
+
+\begin{figure}[H]
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] at (0,0.) {
+      % \node[shift={(0 cm,0.cm)},inner sep=0,rotate={90}] at (0,0) {}
+      \makebox[\textwidth][c] {
+        \includegraphics[width=0.8\textwidth]{pdf/momentum\_scale\_calibration}
+      }
+    };
+    % \node [text width=8cm, scale=1.0] at (14.5,0.5) {$\mu_B$, expected background mean};
+    % \node [text width=8cm, scale=1.0, rotate={90}] at (1.5,7.5) { $S_{D}$, ``discovery'' signal strength  };
+  \end{tikzpicture}
+  \caption{
+    \label{figure:momentum_scale}
+    momentum scheme calibration
+  }
+\end{figure}
+
+The measured position of the Michel spectrum edge can be written as follows 
+$$
+    P_{Michel} = 52.8 - \Delta{P_{EL}}{50} + \delta_{scale}
+$$
+, where  $\Delta P_{EL}$ is the term corresponding to the energy losses not accounted
+by the track reconstruction, $P_{Michel}$ is the measured position of the Michel edge,
+and $\delta_{scale}$ is the momentum correction due to the momentum scale.
+So at B=0.5 T the relative correction due to the momentum scale is 
+$$
+ \delta_{scale}/P_0 (B = 0.5 T) ~=~ \frac {P_{Michel}- 52.8 + \Delta{P_{EL}}^{50}}{P_0}
+$$
+
+, where $P_0 ~=~ 52.8 - \Delta{P_{EL}}$ is the expected  position of the Michel edge spectrum.
+
+Similarly, a measurement of the \piplusenu\ peak position determines
+$$
+ \delta_{scale}/P_0 (B = 0.7 T) ~=~ \frac {P_{\piplusenu}- 69.8.8 + \Delta{P_{EL}^{70}}}{P_0}
+$$
+, and $\Delta{P_{EL}}^{70}$ now is the energy losses by a 70 MeV/c positron.
+
+
+With the two measurements of the momentum scale performed at B=0.5 T and B=0.7 T,
+the momentum scale correction at B = 1.0 T can be obtained by a linear extrapolation
+$$
+{\frac{\delta_{scale}}{P_0}}\bigg\rvert_{1.0 T} =  {\frac{\delta_{scale}}{P_0}}\bigg\rvert_{0.7 T} + {\frac{1.0 - 0.7}{0.7-0.5}}
+  \times
+( {\frac{\delta_{scale}}{P_0}}\bigg\rvert_{0.7 T} -  {\frac{\delta_{scale}}{P_0}}\bigg\rvert_{0.5 T})
+$$
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

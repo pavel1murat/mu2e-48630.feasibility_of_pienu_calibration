@@ -5,15 +5,6 @@ Calibration with \piplusenu\ allows to determine the momentum scale of the exper
 However, this determination is done in a magnetic field B, for which positrons
 from \piplusenu\ get within the detector acceptance, i.e. B $\sim$ 0.7 T.
 
-\begin{itemize}
-\item
-  assume the peak is reconstructed at momentum $p_0$. Momentum scale correction then is
-  $$
-                SF ~=~ \frac{69.8 MeV - \delta p} {p_0}
-  $$
-\end{itemize}
-where $\delta p$ is the average ionization loss of a 70 MeV/c positron.
-
 In this section we make a simplifying assumption that the background under the \piplusenu\
 peak doesn't affect the accuracy of the peak position determination and under that assumption
 estimate the time needed for the calibration.
@@ -22,31 +13,32 @@ estimate the time needed for the calibration.
 \item 
   required accuracy of the momentum scale calibration $@$100 MeV/c: $\sigma_P/P$ < 100 keV/c
 \item
-  for an estimate, require an accuracy of the peak position determination
-  twice as good, $\sim$ 50 MeV/c.
-  FWHM of the \piplusenu\ momentum peak of 1 MeV/c translates into an estimate of
-  $\sigma_P \sim 500$ keV/c, and 
+  assuming, for simplicity, that the systematic uncertainty at 50 MeV/c is negligible,
+  extrapolation of the momentum scale from 70 MeV/c to 100 MeV/c will result in the
+  systematic uncertainty
+  $$
+  \sigma_P \bigg\rvert_{1.0 T} = 3/2 \times \sigma_P  \bigg\rvert_{0.7 T}
+  $$
+  so an accuracy of the \piplusenu\ peak position determination should be < 100 MeV /1.5, say, $\sim$ 50 MeV/c.
+  Starting from FWHM of the \piplusenu\ momentum peak of 1 MeV/c, we assume $\sigma_P \sim 500$ keV/c, and 
   $$,
   \frac {500 {\rm ~keV/c}}{\sqrt N} <  50 {\rm ~keV/c} ~~
   $$
-  or $N > 100$ events in the peak. We conservatively assume that the momentum scale calibration
-  requires 1000 reconstructed \piplusenu\ events.
+  where N is the number of events in the peak. This gives $N > 100$ events in the peak.
+  We conservatively assume that the momentum scale calibration requires 1000 reconstructed \piplusenu\ events.
 \item
   For a yield of $10^{-13}$ events/POT, collecting 1000 events requires $10^{16}$ protons on target.
   In one-batch mode, an average expected pulse intensity is $1.6 \times 10^7$, and
-  an average  pulse rate of 1$.6 \times 10^5$ pulses/sec give the rate of $2.5 \times 10^{12}$ protons/sec.
+  an average  pulse rate of 1$.6 \times 10^5$ pulses/sec correspond to the rate of $2.5 \times 10^{12}$ protons/sec.
 \item
   Assuming running at 10\% of nominal beam intensity and the data collection efficiency of 50\%,
   collecting 1000 reconstructable \piplusenu\ events would require
   $10^{16}/(1.25 \times 10^{11}) \sim 10^5$ seconds, or about one day of running.
 \item
-  running at 10\% of nominal beam intensity with the digitization starting at 200 ns results in 
-  the total number of background hits per microbunch of about 200, so the pileup at T>300 ns
-  should not be a problem.
+  running at 10\% of the nominal beam intensity in one-batch mode and with the digitization starting
+  at 200 ns corresponds to the total number of background hits per microbunch of about 200,
+  so the pileup at T>300 ns should not be a problem.
 \end{itemize}
-
-Note, that the considerations above do not touch the "extrapolation" of the momentum scale up
-to the momentum of 100 MeV/c.
 
 %%% Local Variables:
 %%% mode: latex

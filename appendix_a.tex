@@ -22,7 +22,7 @@
 \end{tabularx}
 
 % \makebox[\textwidth] {
-\tiny{
+{\tiny{
 \begin{verbatim}
 |-----------------+----------+--------+----------+--------+-----------------------+------------------+-----------|
 | dataset         | degrader | N(POT) | N(stops) | N(sim) | SF=(Nstops/Nsim)/NPOT | BR(pi+ -> e+ nu) |  Total SF |
@@ -41,7 +41,7 @@
 #+TBLFM: $6=$4/$5/$3;%11.3e::$8=$6*$7;%11.3e::
 \end{verbatim}
 }
-% }
+}
 
 %%% Local Variables:
 %%% mode: latex
