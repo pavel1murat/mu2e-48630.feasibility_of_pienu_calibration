@@ -17,7 +17,21 @@ Table~\ref{table:comparison_to_bu} compares yield/POT of the \piplusenu\ and DIF
 reported by this analysis to the corresponding numbers reported in \cite{MU2E_5391_PIPLUSENU}.
 The assumed signal window is 67.5-70 MeV/c.
 W/o the degrader, the yields of the \piplusenu\ events are within 30\%,
-however the integrals of the DIF contribution are different by an order of magnitude.
+however the integrals of the DIF contribution are different by an order of magnitude. In order to compare, a dataset with 3.5 mm Be degrader was simulated, as shown in figure~\ref{fig:bu_comparison}. The reduction in yield is similar.
+
+\begin{figure}[H]
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] at (0,0.) {
+      % \node[shift={(0 cm,0.cm)},inner sep=0,rotate={90}] at (0,0) {}
+      \makebox[\textwidth][c] {
+        \includegraphics[width=0.7\textwidth]{pdf/figure_00405}
+      }
+    };
+  \end{tikzpicture}
+  \caption{
+    \label{fig:bu_comparison}
+  }
+\end{figure}
 
 {\red
   comparison for the 3.5 mm Be degrader - Sridhar
@@ -27,9 +41,10 @@ however the integrals of the DIF contribution are different by an order of magni
   \begin{tabularx}{0.7\textwidth} {|l|c|c|c|}  %
 % \begin{tabular}{1.0\textwidth} {|l|l|}  %
     \hline
-    channel     & degrader thickness &  mu2e-5391           &       this analysis        \\
+    channel     & degrader thickness &  mu2e-5391           &       this analysis       \\
     \hline                                                                     
-    \piplusenu\ & none               & $2.4 \times 10^{-12}$ &  $ 1.9 \times 10^{-12}$     \\
+    \piplusenu\ & none               &  $2.4 \times 10^{-12}$ &  $ 1.9 \times 10^{-12}$    \\
+    \piplusenu\ & 3.5 mm             &  $1.9 \times 10^{-12}$ &  $ 1.3 \times 10^{-12}$    \\
     \hline                                                                     
     DIF         & none               & $1.2 \times 10^{-11}$ &  $1.7 \times 10^{-10}$      \\
     \hline
