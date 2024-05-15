@@ -18,7 +18,7 @@ void figure_0405()
  gPipenu = new pipenu::Analysis("a");
  TCanvas *c1 = new TCanvas("c1"," ",900,750);
 
- TH1F * hist1 = gh1("/exp/mu2e/data/projects/pipenu/hist/tripathy/pipenu.bpipab0s51r0100.tripathy_pipenu_pipenu_ana.hist","PipenuAna","trk_158/p_2");
+ TH1F * hist1 = gh1("/exp/mu2e/data/projects/pipenu/hist/tripathy/pipenu.bpipab0s51r0100.tripathy_pipenu_pipenu_ana.hist","PipenuAna","trk_158/p_2"); //158
  hist1->Rebin(5);
 
  hist1->Scale(gPipenu->GetChannel("bpipab0s51r0100")->NormSF());
@@ -54,8 +54,8 @@ void figure_0405()
  hist2->Draw("sames");
 
  TLegend *legend = new TLegend(0.55,0.65,0.76,0.82);
- legend->AddEntry(hist1,"3.5 mm Ti","lep");
- legend->AddEntry(hist2,"3.5 mm Be","lep");
+ legend->AddEntry(hist1,"3.5 mm Ti in signal window: 4.342e-13","lep"); // calculated from trk_159
+ legend->AddEntry(hist2,"3.5 mm Be in signal window: 1.075e-12","lep");
  legend->Draw();
  c1->SetLogy();
  c1->Modified();
